@@ -22,7 +22,7 @@
 
 :root {
   --img--cont-width: 30em;
-  --btn-info-width: 85%;
+  --btn-info-width: 80%;
   --btn-padding: 0.75rem 1.25rem;
   --dark-blue: hsl(223, 47%, 23%);
   --desaturated-blue: hsl(224, 23%, 55%);
@@ -30,10 +30,6 @@
   --bright-blue: hsl(245, 75%, 52%);
   --pale-blue: hsl(225, 100%, 94%);
   --p-info-width: 70%;
-
-  @media only screen and (max-width: 375px) {
-    --btn-info-width: 95%;
-  }
 }
 
 body {
@@ -42,6 +38,9 @@ body {
   justify-content: center;
   /* height: 100vh; */
   background-image: url(../images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--pale-blue);
 }
 
 .container {
@@ -92,12 +91,12 @@ body {
   align-items: center;
   width: var(--btn-info-width);
   height: 5rem;
-  margin: 3em 0;
+  margin: 2em 0;
   /* font-family: poppins-regular; */
   font-family: sans-serif;
   background-color: var(--very-pale-blue);
   border-radius: 1em;
-  padding: 3.75em 1.25em;
+  padding: 3.25em 1.25em;
 }
 
 .plan > a {
@@ -122,6 +121,7 @@ body {
 .plan-info > h1 {
   font-weight: 900;
   font-size: 1.05rem;
+  padding-bottom: 0.25em;
 }
 
 .plan-info > h3 {
@@ -148,15 +148,15 @@ body {
   transition: 0.2s;
   opacity: 1;
   cursor: pointer;
-  margin: 0 0 1.5em 0;
+  margin: 0 0 0.75em 0;
+  box-shadow: 0px 5px 10px -3px rgba(56, 41, 224, 0.69);
+  -webkit-box-shadow: 0px 5px 10px -0.3px rgba(56, 41, 224, 0.69);
+  -moz-box-shadow: 0px 5px 10px -0.3px rgba(56, 41, 224, 0.69);
 }
 
 .confirmations button:hover {
   opacity: 0.9;
   background-color: var(--bright-blue);
-  box-shadow: 0px 0px 1em -0.3em rgba(56, 41, 224, 0.69);
-  -webkit-box-shadow: 0px 0px 1em -0.3em rgba(56, 41, 224, 0.69);
-  -moz-box-shadow: 0px 0px 1em -0.3em rgba(56, 41, 224, 0.69);
 }
 
 .confirmations .cancel-order {
@@ -164,7 +164,7 @@ body {
   padding: var(--btn-padding);
   text-decoration: none;
   color: var(--dark-blue);
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin: 0 0 2em 0;
   transition: 0.2s color;
 }
@@ -174,10 +174,23 @@ body {
 }
 
 @media only screen and (max-width: 425px) {
+  body {
+    background-image: url(/images/pattern-background-mobile.svg);
+  }
+
+  :root {
+    --btn-info-width: 90%;
+    --p-info-width: 80%;
+  }
+
   .container {
     width: 90%;
     margin: 5em auto;
     height: fit-content;
+  }
+
+  .plan {
+    padding: 3em 0.7em;
   }
 
   .hero-img {
